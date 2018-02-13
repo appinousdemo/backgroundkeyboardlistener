@@ -19,5 +19,5 @@ public class sendMail
         catch ( IOException ex )
         {
         }
-    }
+    } 
 }
