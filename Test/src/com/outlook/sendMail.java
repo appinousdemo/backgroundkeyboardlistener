@@ -10,7 +10,7 @@ public class sendMail
     public static void main(String[] args) throws URISyntaxException
     {
         String subject="password";
-        String body="See%20it";
+        String body="See%20it"; 
         String cc="brath@inautix.co.in";
 
         try {
