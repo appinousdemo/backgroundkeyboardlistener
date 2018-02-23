@@ -12,16 +12,35 @@ public class TestDBConnection {
         try {
         	Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Trying to connect");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://13.126.197.196:3306/support","po","danam@po");
-            Statement stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery("select id,code from hdz_tickets");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://43.255.154.58:3306/appinous","siva","Welcome@123");
+           // Statement stmt = connection.createStatement();
+           /* ResultSet rs = stmt.executeQuery("select id,code from hdz_tickets");
             while ( rs.next() ) {
                 String lastName = rs.getString("id");
                 System.out.println(lastName);
-            }
-            connection.close();
+            }*/
+            
             System.out.println("Connection Established Successfull and the DATABASE NAME IS:"
-                    + connection.getMetaData().getDatabaseProductName());
+                    );
+            System.out.println("Creating table in given database...");
+            Statement stmt = connection.createStatement();
+            stmt.executeUpdate("DROP TABLE profile");
+            String sql = "CREATE TABLE profile " +
+                         "(userid VARCHAR(8) not NULL, " +
+                         " password VARCHAR(16), " + 
+                         " name VARCHAR(255), " + 
+                         " mbl VARCHAR(16), " + 
+                         " PRIMARY KEY ( userid ))"; 
+
+            stmt.executeUpdate(sql);
+            
+            System.out.println("Created table in given database...");
+           sql = "INSERT INTO profile " +
+                    "VALUES ('SIVA0001', 'siva.k96', 'Sivabharathi', 8695464676)";
+       stmt.executeUpdate(sql);
+      
+       System.out.println("Inserted records into the table...");
+            connection.close();
         } catch (Exception e) {
 System.out.println("Unable to make connection with DB");
             e.printStackTrace();
