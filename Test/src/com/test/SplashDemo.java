@@ -70,7 +70,7 @@ class Splash extends JFrame {
         
         setLocationRelativeTo(null);
         setUndecorated(true);
-        img = new ImageIcon(getClass().getResource("/com/test/image/1234.gif"));
+        img = new ImageIcon(getClass().getResource("/com/test/image/birthday.gif"));
         setBackground(new Color(0, 255, 0, 0));
         imglabel = new JLabel(img);
         add(imglabel);
