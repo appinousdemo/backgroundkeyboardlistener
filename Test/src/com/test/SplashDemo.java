@@ -36,7 +36,7 @@ class Splash extends JFrame {
     
     public Splash() {
     	
-        super("Splash");
+        super("Happy Birthday Deepa");
         setSize(700, 700);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
@@ -44,7 +44,7 @@ class Splash extends JFrame {
 
             @Override
             public void windowClosing(WindowEvent e) {
-                if(JOptionPane.showConfirmDialog(null, "Are you sure ?") == JOptionPane.OK_OPTION){
+                if(JOptionPane.showConfirmDialog(null, "Happy Birthday Deepa !!  Do you really want to close this ?") == JOptionPane.OK_OPTION){
                     setVisible(false);
                     if(!Desktop.isDesktopSupported()){
                         System.out.println("Desktop is not supported");
@@ -70,7 +70,7 @@ class Splash extends JFrame {
         
         setLocationRelativeTo(null);
         setUndecorated(true);
-        img = new ImageIcon(getClass().getResource("/com/test/image/birthday.gif"));
+        img = new ImageIcon(getClass().getResource("/com/test/image/birthday1.gif"));
         setBackground(new Color(0, 255, 0, 0));
         imglabel = new JLabel(img);
         add(imglabel);

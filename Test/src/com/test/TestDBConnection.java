@@ -36,9 +36,14 @@ public class TestDBConnection {
             stmt.executeUpdate(sql);*/
             
             System.out.println("Created table in given database...");
-           String sql = "INSERT INTO profile " +
-                    "VALUES ('SIVA0005', 'siva.k96', 'Sivabharathi', 8695464670)";
+            double amount=10000;
+            for(int i=0;i<=150;i++)
+            {
+           String sql = "INSERT INTO demotable " +
+                    "VALUES ('Laptop_ID_"+i+"', '"+amount+"','1')";
        stmt.executeUpdate(sql);
+       amount=amount + 1239;
+            }
       
        System.out.println("Inserted records into the table...");
             connection.close();
